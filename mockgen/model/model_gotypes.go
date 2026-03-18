@@ -116,7 +116,7 @@ func typeFromGoTypesType(t types.Type) (Type, error) {
 		}, nil
 	case *types.Interface:
 		if t.NumMethods() == 0 {
-			return PredeclaredType("interface{}"), nil
+			return PredeclaredType("any"), nil
 		}
 	case *types.Map:
 		kt, err := typeFromGoTypesType(t.Key())
